@@ -10,8 +10,4 @@ router.get('/ex2', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/ex2.html'))
 })
 
-router.get('/ex2base', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/ex2base.html'))
-})
-
 module.exports = router
