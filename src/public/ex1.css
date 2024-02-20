@@ -1,0 +1,56 @@
+
+.requireData {
+    color: red;
+}
+
+.area {
+    border: 2px solid red;
+    padding: 5px;
+    margin: 5px;
+}
+
+#searchArea input,
+#inputDataArea input {
+    background-color: beige;
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+
+#searchArea button,
+#inputDataArea button,
+#manyChoice button {
+    background-color: red;
+    color: white;
+    border: none;
+    margin: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid black;
+}
+
+table th,
+td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: left;
+}
+
+table th {
+    background-color: red;
+    color: white;
+}
+
+#inputDataArea {
+    margin: 5px;
+    padding: 5px;
+}
+
+#inputDataList label,
+#inputDataList input,
+#inputDataList select {
+    margin:5px
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <title>Danh sách sinh viên</title>
+    <link rel="stylesheet" href="ex1.css">
+
+</head>
+
+<body>
+    <form id="searchBox">
+        <!-- Vùng tìm kiếm -->
+        <div id="searchArea" class="area">
+            <label for="txtTuKhoa"></label>
+            <input type="text" placeholder="Từ khóa cần tìm">
+            <button class="btnSearch" id="btnSearchSV">Tìm kiếm</button>
+        </div>
+
+        <!-- Vùng hiển thị kết quả -->
+        <div id="showArea" class="area">
+            <table id="dataList">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Mã SV</th>
+                        <th>Tên sinh viên</th>
+                        <th>Ngày sinh</th>
+                        <th>Giới tính</th>
+                        <th>Khoa</th>
+                        <th>Thao tác</th>
+                        <th onchange="chooseAllSV()"><input type="checkbox" id="chooseAllSV"></th>
+                    </tr>
+                </thead>
+                <tbody id="listData" onchange="refreshIndexTable()">
+                </tbody>
+            </table>
+        </div>
+
+        <!-- vùng nhập thông tin -->
+        <div id="inputDataArea" class="area">
+            <div id="btnData">
+                <button type="button" onclick="btnAddOneSinhVien()">Thêm mới</button>
+                <button type="button" onclick="btnUpdateOneSinhVien()">Cập nhật</button>
+                <button type="button" onclick="btnDeleteOneSinhVien()">Xóa</button>
+            </div>
+            <div id="inputDataList">
+                <label for="txtMaSV">Mã SV <span class="requireData">*</span></label>
+                <input type="text" id="txtMaSV" required>
+                <br><label for="txtTenSV">Tên sinh viên<span class="requireData">*</span></label>
+                <input type="text" id="txtTenSV" required>
+                <br><label for="txtNgaySinh">Ngày sinh</label>
+                <input type="text" id="txtNgaySinh" required>
+
+                <br><label>Giới tính:</label>
+                <input type="radio" name="rdbGioiTinh" value="Nam" id="rdbNam" checked>
+                <label for="rdbNam">Nam</label>
+                <input type="radio" name="rdbGioiTinh" value="Nữ" id="rdbNu">
+                <label for="rdbNu">Nữ</label>
+
+                <br><label for="drpKhoa">Khoa</label>
+                <select id="drpKhoa" required>
+                </select>
+            </div>
+        </div>
+
+        <!-- Thao tác nhiều lựa chọn -->
+        <div class="area" id="manyChoice">
+            <label for="">Thao tác trên các bản ghi đã chọn</label>
+            <button type="button" onclick="exportToFile()">Xuất file</button>
+            <button type="button" onclick="deleteManySV()">Xóa</button>
+        </div>
+    </form>
+
+
+<script src="/ex1.js"></script>
+
+</body>
+
+</html>

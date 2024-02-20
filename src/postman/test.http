@@ -1,0 +1,13 @@
+
+@url = http://localhost:2000/
+
+
+###
+GET {{url}}/hello.txt 
+
+
+###
+GET {{url}}/ex1
+
+###
+GET {{url}}/ex

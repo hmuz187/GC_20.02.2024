@@ -1,0 +1,47 @@
+Bài tập 1: Xây dựng một web form tĩnh "Danh sách sinh viên", bao gồm các thành phần sau:
+- Sử dụng thẻ form để tạo các form cần thiết trên page và đặt các Form element tương ứng vào bên trong.
+- Tiêu đề web page đặt là "Danh sách sinh viên"
+- Vùng tìm kiếm: Có một label "Từ khóa", một textbox "txtTuKhoa" mặc định khi textbox trống thì sẽ hiển thị trong textbox lời gợi nhắc "Từ khóa cần tìm" và một button "Tìm kiếm"
+- Vùng hiển thị kết quả: Có một table với các cột thông tin: Cột checkbox (để trống column header), Mã SV, Tên sinh viên, Ngày sinh, Giới tính, Khoa, cột thao tác hiển thị hai link icon là Sửa và Xóa với từng dòng dữ liệu. Hiển bị 10 dòng dữ liệu (cho số liệu giả định).
+- Vùng nhập thông tin: Có một hàng các button "Thêm mới", "Cập nhật", "Xóa". Tiếp theo bên dưới cột bên trái là các label Mã SV, Tên sinh viên, Ngày sinh, Giới tính, Khoa; cột bên phải là các ô nhập liệu textbox "txtMaSV", textbox "txtTenSV", textbox "txtNgaySinh", radio button "rdbGioiTinh" có hai giá trị "Nam" và "Nữ", dropdown box "drpKhoa". Thêm dấu (*) đỏ vào các dòng Mã SV, Tên SV và Khoa để đánh dấu là các ô bắt buộc nhập và thiết lập thuộc tính required cho các box này
+
+Bài tập 2: Xây dựng giao diện cho game tic-tac-toe (search google "game tic-tac-toe" tìm hiểu luật chơi của trò chơi này)
+- Vẽ bàn cờ gồm 9 ô vuông (3 hàng x 3 cột) sử dụng các thẻ <div>
+- Các ô vuông đặt button đúng bằng kích cỡ ô và text button điền ngẫu nhiên các giá trị hoặc "X" hoặc "O"
+- Trên bàn cờ đặt một label hiển thị lượt chơi. Có hai lượt chơi X và O. Mặc định hiển thị Lượt chơi tiếp theo: X
+
+
+
+
+===========css===================
+Bài tập 1: Tiếp tục bài tập Xây dựng một web form tĩnh "Danh sách sinh viên" ở phần HTML, thiết lập external style (file css) cho page như sau:
+- Vùng tìm kiếm đặt viền màu đỏ, ô bên trái chứa label "Từ khóa" đặt màu nền ô là màu ghi trắng, button "Tìm kiếm" đặt màu đỏ chữ trắng.
+- Vùng hiển thị kết quả đặt viền màu đỏ dùng chung style với viền của vùng tìm kiếm. Viền của table màu đen, nét thanh, hàng tiêu đề cột (column header) của Table đặt nền màu đỏ chữ trắng.
+- Vùng nhập thông tin đặt viền màu đỏ dùng chung style với vùng tìm kiếm. Các button đặt màu đỏ chữ trắng dùng chung style với button "Tim kiếm" ở trên. Tiếp theo bên dưới cột bên trái chứa các label Mã SV, Tên sinh viên, Ngày sinh, Giới tính, Khoa đặt màu nên ô là màu ghi trắng cùng style với ô trái chứa label Từ khóa ở trên
+Bài tập 2: Tiếp tục bài tập Xây dựng giao diện cho game tic-tac-toe, thiết lập external style (file css) cho page như sau
+- Viền của bàn cờ và các ô là màu đen
+- Đặt chung style cho text button của 9 ô font: Arial, font-size: 24px, bold và màu nền là màu ghi trắng
+- Label hiển thị lượt chơi đặt style font-family: Century Gothic, Futara, San-serif, font-size: 14px
+
+
+==================js==============
+
+- Khai báo class SinhVien (MaSV, TenSV, NgaySinh, GioiTinh, MaKhoa, class Khoa (MaKhoa, Ten Khoa). 
+- Xây dựng Function themSinhVien thực hiện lưu thông tin một sinh viên (Object SinhVien mới vào danh sách sinh viên (List Objects)
+- Xây dựng Function suaSinhVien thực hiện cập nhật lại thông tin sinh viên và Object SinhVien theo MaSV truyền vào.
+- Xây dựng Function xoaSinhVien thực hiện xóa Object SinhVien theo MaSV truyền vào ra khỏi List Objects Danh sách sinh viên
+- Xử lý thao thác khi click vào nút Thêm mới thì xóa trắng các ô nhập bên dưới, sau khi nhập xong nhấn nút Cập nhật thì lưu thông tin sinh viên vào List Object Danh sách sinh viên và hiển thị lại Bảng danh sách sinh viên ở trên. Trước khi lưu cần kiểm tra đã nhập đủ Mã SV, Tên SV và Khoa chưa và hiện cảnh báo nhắc thiếu thông tin nào chưa nhập
+- Khi người dùng click vào icon Sửa tại một hàng thì hiển thị thông tin tương ứng vào các ô nhập ở Vùng nhập thông tin cho phép người dùng sửa thông tin (trừ Mã SV không được sửa). Sửa xong thông tin ấn Cập nhật sẽ lưu thông tin vào List Objects Danh sách sinh viên và cập nhật nội dung hiển thị tại Bảng danh sách sinh viên ở trên
+- Khi người dùng click vào icon Xóa tại một hàng thì hiển thị Confirmation box hỏi Người dùng có chắc chắc muốn xóa sinh viên này không? Nếu ấn Yes thì tiến hành Xóa object sinh viên khỏi List Objects và cập nhật lại Bảng danh sách sinh viên.
+- Khi người dùng tick chọn nhiều hàng và ấn nút Xóa ở trên thì hiện Confirmation box, xác nhận thì cho phép xóa nhiều object sinh viên cùng lúc và cập nhật List Objects rồi hiển thị lại Bảng danh sách sinh viên. 
+- Ở vùng tìm kiếm khi người dùng nhập Từ khóa tìm kiếm và ấn Tìm Kiếm thì sẽ tìm kiếm các object sinh viên tại các thuộc tính của lớp SinhVien trong List Objects có trùng thông tin tạo List Objects mới và cập nhật lại Bảng hiển thị danh sách bên dưới. Nếu để trắng và ấn Tìm kiếm thì trở lại List Objects ban đầu lúc khởi tạo mặc định 10 objects.
+
+
+--------
+Bài tập 2: Tiếp tục bài tập Xây dựng game tic-tac-toe, thiết lập external javascript (file .js bên ngoài html) cho page như sau:
+- Sử dụng Array để lưu trạng thái 9 ô
+- Có hai lượt chơi X và O lần lượt, mỗi lượt chỉ một lần chọn vào một ô. Nếu đang là lượt của X thì khi click vào ô sẽ hiện chữ X tại ô đó, nếu lượt của O sẽ hiện chữ O tại ô đó.
+- Click lên ô đã chọn trước đó thì không xử lý gì và lượt chơi vẫn tiếp tục (hai nói cách khác là người chơi không được chọn ô đã được tick trước đó)
+- Mặc định label trạng thái hiển thị Lượt chơi tiếp theo: X; Tức là X được đi trước; Sau khi X chọn thì sẽ hiên thị Lượt chơi tiếp theo: O và đến lượt O đi, cứ tiếp tục như vậy cho đến khi kín các ô chọn thì kết thúc trò chơi.
+- Trò chơi kết thúc khi ở một trong hai tình huống: Hoặc khi cả hai bên đã chọn hết các ô mà chưa bên nào thắng; Hoặc khi một bên đã hoàn thành 3 ô thẳng hàng theo chiều đứng hoặc ngang hoặc chéo.
+- Sẽ được cung cấp thuật toán để tính người thắng cuộc và chỉ cần implement theo. Nếu có người thắng cuộc thì label status sẽ hiển thị Người thắng cuộc: X hoặc O. Nếu kết thúc mà không có người thắng cuộc thì sẽ hiển thị Không có người thắng cuộc.
